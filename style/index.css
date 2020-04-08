@@ -44,12 +44,29 @@ th{
     border-bottom: 1px solid rgba(0,0,0,0.2);
     background-color: rgba(255,255,255,0.7);
     z-index:3;
-    animation: header 0.5s 
+    animation: header 0.5s;
 }
 @keyframes header{
-    0%{ transform: translateY(-100%);}
-    100%{transform: translateY(0)}
+    0%{ 
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0)
+    }
 }
+.headerHeading a{
+    animation: logo 0.5s;
+}
+@keyframes logo{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+} 
 /* 헤더 로고부분! */
 .headerHeading{
     height: 100%;
@@ -79,7 +96,8 @@ th{
     width:80px;
     height: 80px;
     background-color: #fff;
-    transition: all 0.7s;
+    animation-name: navBtn;
+    animation-duration: 0.1s;
 }
 /* 네비게이션버튼 애니메이션 */
 @keyframes navBtn{
@@ -92,7 +110,7 @@ th{
         transform: translateX(0);
     }
 }
-.openNavigationBtn:hover{
+.openNavigationBtn:hover{ 
     background-color: #eee; 
 }
 /* 헤더 햄버거 패티부분 */
@@ -192,12 +210,12 @@ th{
     cursor: pointer;
     position: relative;
 
-    /* animation-name: list;
+    animation-name: list;
     animation-duration: 0.5s;
-    animation-fill-mode: backwards; */
+    animation-fill-mode: backwards;
 }
 /* 메뉴 애니메이션 */
-/* .menuList:nth-child(1){
+.menuList:nth-child(1){
     animation-delay: 3.2s;
 }
 .menuList:nth-child(2){
@@ -208,7 +226,10 @@ th{
 }
 .menuList:nth-child(4){
     animation-delay: 3.8s;
-} */
+}
+.menuDescription{
+    text-align: justify;
+}
 @keyframes list{
     0%{
         opacity: 0;
@@ -331,7 +352,7 @@ figure img{
 }
 
 
-@media(max-width:560px){
+@media only all and (max-width:560px){
     .menuList{
         width:100%;
     }
@@ -422,36 +443,22 @@ figure img{
         left:53%
     }
 }
-}
-@media(min-width:561px){
+
+@media only all and (min-width:561px){
     .main{
         max-width: 800px;
     }
     .menuList{
-        width:48%;
+        width:50%;
     }
-
-    .openNavigationBtn{
+    /* .openNavigationBtn{
         animation-name: navBtn;
         animation-delay: 3s;
         animation-duration: 0.5s;
         animation-fill-mode: backwards;
-    }
-    .headerHeading a{
-        transform: translateX(-100%);
-        animation: logo 1s forwards 0.2s;
-    }
-    @keyframes logo{
-        0%{
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-        100%{
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    .openNavigationBtn{
+    } */
+   
+    /* .openNavigationBtn{
         transform: translateX(100%);
         animation: btn 1s forwards 0.2s;
     }
@@ -464,8 +471,8 @@ figure img{
             transform: translateX(0);
             opacity: 1;
         }
-    }
-    .menuList{
+    } */
+    /* .menuList{
         transform: translateY(-50px);
         animation: MenuList 1s forwards 1s;
         opacity: 0;
@@ -495,8 +502,8 @@ figure img{
             transform: translateY(0);
             opacity: 1;
         }
-    }
-    .flowerRainBox img{
+    } */
+    /* .flowerRainBox img{
         position: absolute;
         top:-10vh;
         z-index: -1;
@@ -669,5 +676,5 @@ figure img{
             left: 34%;
             opacity:0;
         }
-    }
+    } */
 }

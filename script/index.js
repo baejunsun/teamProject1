@@ -51,6 +51,8 @@ closeNaviBtn.addEventListener("click", function (e) {
 })
 // 네비게이션 클릭 
 for(var i =0; i < navigationItems.length; i++){
+    // 최초클릭확인
+
     // 변수 i는 0인데 , navigationItems 즉 navigationItems이라는 클래스를 갖는 html태그들의 집합인
     //navigationItems의 내부 아이템들의 갯수가 변수 i보다 크면 아래의 코드를 실행한 후 코드가 끝나면
     // i++ 즉 i에 1을 더해준다.
